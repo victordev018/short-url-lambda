@@ -59,10 +59,10 @@ public class RedirectUrlHandler implements RequestHandler<Map<String, Object>, M
             return response;
         }
 
-        response.put("Location", urlData.getOriginalUrl());     // url to be redirected
         response.put("statusCode", 302);                        // status code of the redirect
         Map<String, String> headers = new HashMap<>();
-        headers.put("Location", urlData.getOriginalUrl());
+
+        headers.put("Location", urlData.getOriginalUrl());      // url to be redirected
         response.put("headers", headers);
 
         return response;
